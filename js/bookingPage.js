@@ -2,7 +2,6 @@ const bookDay = document.querySelector("#bookDay");
 const bookTime = document.querySelector("#bookTime");
 const makeBookingButton = document.querySelector("#makeBookingButton");
 
-makeBookingButton.addEventListener('click', checkAvailability);
 
 function checkAvailability() {
     let bookDayVar = bookDay.value;
@@ -17,6 +16,8 @@ function checkAvailability() {
     alert("Your Booking Was Made Succesfully");
 
 };
+
+makeBookingButton.addEventListener('click', checkAvailability);
 
 
 
