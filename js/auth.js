@@ -44,7 +44,7 @@
 
 		const signUpButton = document.querySelector("#signUpButton");
 		const signInButton = document.querySelector("#signInButton");
-		const signOutButton = document.querySelector("#signOutButton");
+		const signOutButton = document.getElementById("#signOutButton");
 		//content to be hidden for signUp
 		const userfirstName = document.querySelector("#userfirstName");
 		const userlastName = document.querySelector("#userlastName");
