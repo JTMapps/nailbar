@@ -51,6 +51,7 @@
 		const userPhoneNumber = document.querySelector("#userPhoneNumber");
 
 		//secretContent.style.display = 'none';
+	});
 
 		const userSignUp = async() => {
 			const signUpEmail = userEmail.value;
@@ -84,8 +85,10 @@
 				console.log(errorCode + errorMessage)
 			})
 		}
-	});
 
+		const userSignOut = async() => {
+			await signOut(auth);
+		}
 
 		const checkAuthState = async() => {
 			onAuthStateChanged(auth, user => {
@@ -100,11 +103,6 @@
 					userPhoneNumber.style.display= "block";	
 				}
 			})
-		}
-		
-
-		const userSignOut = async() => {
-			await signOut(auth);
 		}
 
 		checkAuthState();
