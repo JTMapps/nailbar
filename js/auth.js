@@ -8,9 +8,14 @@
 			onAuthStateChanged,
 			signOut
 		  } from  "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
-		 		  // TODO: Add SDKs for Firebase products that you want to use
+		 		  // TODO: Add SDKs for Firebase products that you want to use	   
+		  
+		import{ getDatabase, set, get, update, remove, ref, child}from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js"
+  
+		// FIREBASE OBJECT CONFIGURATION;
+		document.addEventListener("DOMContentLoaded", event => { 
 
-		  // Your web app's Firebase configuration
+			// Your web app's Firebase configuration
 		  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 		  const firebaseConfig = {
 			apiKey: "AIzaSyA4xMNCyjxbhux_hBDe-nO9pF4uDsiipaI",
@@ -21,13 +26,8 @@
 			appId: "1:425524125484:web:64dbba0782b46ec4d29689",
 			measurementId: "G-FHGB2XZM6D"
 		  } //from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
-	   
 		  
-		import{ getDatabase, set, get, update, remove, ref, child}from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js"
-  
-		// FIREBASE OBJECT CONFIGURATION;
-		document.addEventListener("DOMContentLoaded", event => { 
-
+		  
 		const app = initializeApp(firebaseConfig);
 		const auth = getAuth(app);
 
