@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	<title >MUSAS NAILBAR| HOME PAGE</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link href="auth.html">
+
+	<script src="../nailbar/js/main.js"></script>
+	
+</head>
+
+<body>
+
+	<div class="header">
+		
+		<span class="logo" >MUSAs NAILBAR</span>
+		
+		<div class="signIn">
+
+			<button class="signOutButton" id="signOutButton">sign out</button>
+		
+			<button onclick=myFunction() class="signInBtn">sign in</button>
+		
+			<div id="myDropdown" class="dropdown-content">
+                <a href="auth.html">LOGIN(signup)</a>
+                <a href="services.html">Service Menu</a>
+            </div>
+		</div>
+	
+	</div >
+	
+	<div class="adress"> 
+
+        <span class="picture">
+            <pre>
+		1744 Rockville
+		Middelburg    
+		Mhluzi, Mpumalanga
+		OPEN:   09:00AM - 06:00PM (WEEKDAYS)
+			    09:00AM - 03:00PM (SATURDAY ONLY)
+
+		CONTACT: 073 807 9703
+		NSTHEMBA67@GMAIL.COM    
+            </pre>
+        </span>
+
+		<span class="disneyland"><iframe name="mapRegion" alt="A Map To Musas Nailbar" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.6437338803253!2d29.4345389!3d-25.749292699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1eea61c2300e7f37%3A0xac41088aa798b6f3!2s1744%20Kerk%20St%2C%20Mhluzi%2C%20Middelburg%2C%201055!5e0!3m2!1sen!2sza!4v1694100610158!5m2!1sen!2sza" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></span>
+        
+    </div>
+	
+	<div class="business" id="business">
+		<span class="makeABookingButton">
+			<a href="bookingPage.html">Make A Booking</a>
+		</span>
+	</div>
+	
+	<!--Work on the image gallery-->
+	
+	<div class="gallery_wrapper">
+		<div class="gallery">
+			<h4>Recent NailArt</h4>
+			<ul>
+				<li><img src="../nailbar/img/nailart1.jpg" alt="recent nailart slot#1"></li>
+				<li><img src="../nailbar/img/nailart2.jpg" alt="recent nailart slot#2"></li>
+				<li><img src="../nailbar/img/nailart3.jpg" alt="recent nailart slot#3"></li>
+				<li><img src="../nailbar/img/nailart4.jpg" alt="recent nailart slot#4"></li>
+				<li><img src="../nailbar/img/nailart5.jpg" alt="recent nailart slot#5"></li>
+				<li><img src="../nailbar/img/nailart6.jpg" alt="recent nailart slot#6"></li>
+			</ul>
+		</div>
+	</div>
+	
+	<footer>
+        <a href="https://instagram.com/jtmapps?igshid=OGQ5ZDc2ODk2ZA==">Instagram<i class='bx bxl-instagram'></i></a>
+        <a href="https://wa.link/0ylhz0">Whatsapp<i class='bx bxl-whatsapp-square'></i></a>
+    </footer> 
+
+	<script src="../nailbar/js/bookingPage.js" defer></script>
+
+	<script type="module" defer>
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+		import {
+			getAuth,
+			onAuthStateChanged,
+			signOut
+		} from  "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+
+		const firebaseConfig = {
+			apiKey: "AIzaSyA4xMNCyjxbhux_hBDe-nO9pF4uDsiipaI",
+			authDomain: "salon-be3a1.firebaseapp.com",
+			projectId: "salon-be3a1",
+			storageBucket: "salon-be3a1.appspot.com",
+			messagingSenderId: "425524125484",
+			appId: "1:425524125484:web:64dbba0782b46ec4d29689",
+			measurementId: "G-FHGB2XZM6D"
+		} 
+
+		const app = initializeApp(firebaseConfig);
+		const auth = getAuth(app);
+		
+		const signOutButton = document.querySelector("#signOutButton");
+		const business= document.querySelector("#business");
+		
+
+		const userSignOut = async() => {
+				await signOut(auth);
+			}
+
+			const checkAuthState = async() => {
+			onAuthStateChanged(auth, user => {
+				if(user) {
+					business.style.display = "flex";
+					signOutButton.style.display= "block";
+				}
+				else{
+
+					business.style.display = "none";
+					signOutButton.style.display= "none";
+				}
+			})}
+
+	checkAuthState();
+	signOutButton.addEventListener('click', userSignOut);
+
+	</script>
+	
+
+</body>

@@ -1,0 +1,61 @@
+* {
+	/* display: flex; */
+	flex-wrap: wrap;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: Arial;
+	background: rgb(110, 110, 110);
+}
+
+.userDetails .userProfilePicture{
+	width: 4em;
+	height: 4em;
+	margin: 2px;
+	padding: 2px;
+	border-radius: 50%;
+}
+
+.userDetails .userProfilePicture img{
+	width: 4em;
+	height: 4em;
+	padding: 2px;
+	border-radius: 50%;
+}
+
+.userDetails li{
+	width: 7em;
+	margin: 4px;
+}
+
+.clientReview{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.clientReview .clientReviewPlate{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+
+}
+
+.clientReview .clientReviewPlate input{
+	display: inline-block; 
+	width:100vh;
+	height: 12em;
+	color:black;
+	background-color: azure;
+	border-radius: 8px;
+
+}
+.clientReview .clientReviewPlate button{
+
+	width: 3em;
+	font-size: larger;
+	padding: 2px;
+	margin: 4px;
+}
+

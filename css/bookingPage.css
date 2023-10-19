@@ -1,0 +1,54 @@
+* {
+	/* display: flex; */
+	flex-wrap: wrap;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: Arial;
+	background: rgb(110, 110, 110);
+}
+
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 23%;
+}
+
+.bookBox{
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	/* height: 20000px; */
+	align-items: center;
+	padding: 10px;
+}
+.bookBox .title{
+	color: white;
+	margin: 3px 0 5px 0;
+}
+
+.bookBox form .bookingDetails .bookingInputBox{
+	color: white;
+	background-color: aliceblue;
+}
+
+.bookBox form .bookingDetails .bookingInputBox label{
+	color: black;
+	background-color: aliceblue;
+}
+
+.bookBox form .bookingDetails .bookingInputBox input{
+	background-color: aliceblue;
+}
+
+.bookBox form{
+	color: white;
+	background-color: aliceblue;
+	padding: 7px;
+}
+
+form button{
+	margin: 7px;
+	padding: 0.7px;
+}

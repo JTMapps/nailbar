@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book an Appointment</title>
+	
+	<link rel="stylesheet" href="css/bookingPage.css">
+     
+
+</head>
+
+<body >
+    <div class="bookBox">
+        <div class="title">Schedule A Booking</div>
+        <form id="form" class="form" action="../nailbar/adminPage.html">
+
+            <div class="bookingDetails">
+
+                <div class="bookingInputBox">
+                    <label id="bookDayLabel" for="bookDay">schedule the day</label>
+                    <input id="bookDay" type="date" placeholder="enter a date">
+                </div>
+                <div class="bookingInputBox">
+                    <label id="bookTimeLabel" for="bookTime">schedule the time</label>
+                    <input id="bookTime" type="time" placeholder="enter the time" >
+                </div>
+            </div>
+
+            <div class="userPayement"></div>
+            
+            <button id="makeBookingButton" class="makeBookingButton"  type="submit" onsubmit=checkAvailability()>Make Booking </button>
+            
+        </form>
+    </div>
+
+    <script src="../nailbar/js/adminPage.js" defer></script>
+    <script src="../nailbar/js/bookingPage.js" defer></script>
+    <!--i want to check if a booking is available first from the admin page-->
+
+</body>

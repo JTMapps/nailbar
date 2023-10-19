@@ -1,0 +1,342 @@
+* {
+	/* display: flex; */
+	flex-wrap: wrap;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: Arial;
+	background: rgb(143 141 148 / 98%);
+}
+
+.header{
+	height: 60px;
+	width: auto;
+	margin: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: linear-gradient(135deg, #f300be, rgb(110, 110, 110));
+}
+
+.header .logo{
+	padding: 9px;
+	color: white;
+	background: rgb(66, 49, 63);
+	border-width: 5px;
+	border-style:inset;
+	border-color: rgba(90, 37, 37, 0.678);
+	border-radius: 6px;
+	margin-left: 5px;
+	font-size: 12px;
+	}
+
+
+.header .signIn{
+	display:inline-flex;
+	justify-content: space-between;
+	float: right;
+	margin-right: 5px;
+	background-color: rgb(110 110 110 / 0%);
+}
+
+.header .signIn button{
+
+	background-color: rgb(66, 49, 63);
+    color: white;
+    margin: 5px;
+    padding: 2px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+  /* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show{display:block;}
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .signInBtn:focus {
+    background-color: #2980B9;
+  }
+
+
+.adress{
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px 0 10px 0;
+  background: linear-gradient(135deg, #f300be, rgb(110, 110, 110));
+}
+
+.adress span{
+	margin: 10px;
+}
+
+.adress .picture{
+  display: flex;
+  flex-wrap: wrap;
+  flex: auto;
+  justify-content: center;
+  align-content: center;
+  background-image: url(../img/shopp.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  margin: 8px;
+}
+
+
+.adress .picture pre{
+  /* background: #f300be; */
+  opacity: 0.7;
+  color:  white;
+  margin: 11px;
+  font-size: 12px;
+  text-align: left;
+  text-decoration-color: aqua;
+}
+
+.adress iframe{
+	width: 100%;
+}
+
+.business{
+	display: flex;
+	/* margin: 10px; */
+	flex: auto;
+	justify-content: center;
+	/* align-items: center; */
+	/* height: 400px; */
+	background: linear-gradient(135deg, #f300be, rgb(110, 110, 110));
+}
+
+
+.business .makeABookingButton{
+	display:flex;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	justify-content: center;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	background-color: deeppink;
+	background-image: url(../img/logo.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 300px;
+	width: 90%;
+}
+
+.makeABookingButton a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: inherit;
+	margin-bottom: 10px;
+	background-color: #865fa0b0;
+}
+
+/*Work on the image gallery*/
+
+.gallery_wrapper {
+	display:flex;
+	justify-content: center;
+	margin: 0px auto;
+	background: linear-gradient(125deg, rgb(110, 110, 110), rgb(18 23 41));
+	width: 100%;
+}
+
+
+.gallery {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	background: rgb(183 181 192 / 4%);
+}
+
+.gallery h4{
+	width: 180px;
+	background: rgba(25, 35, 70, 0.548);
+	color: #ddd;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+div.gallery ul {
+	list-style-type: none;
+	margin-left: 14%;
+	/* margin-right: 3%; */
+}
+
+/* animation */
+div.gallery ul li, div.gallery li img {
+	-webkit-transition: all 0.1s ease-in-out;
+  	-moz-transition: all 0.1s ease-in-out;
+  	-o-transition: all 0.1s ease-in-out;
+  	transition: all 0.1s ease-in-out;
+}
+
+div.gallery ul li {
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+flex-wrap: wrap;
+
+position: relative;
+
+float: left;
+
+width: 130px;
+
+height: 130px;
+
+margin: 10px auto;
+
+padding: 5px;
+
+z-index: 0;
+}
+
+/* Make sure z-index is higher on hover */
+/* Ensure that hover image overlapped the others */
+div.gallery ul li:hover {
+	z-index: 5;
+}
+
+/* Image is position nicely under li */
+div.gallery ul li img {
+	/* position: absolute; */
+	left: 0;
+	top: 0;
+	border: 1px solid rgb(155, 155, 155);
+	padding: 2px;
+	width: 130px;
+	height: 130px;
+	background: #fd1e985c;
+}
+
+div.gallery ul li img:hover {
+	width: 200px;
+	height: 200px;
+	margin-top: -130px;
+	margin-left: -130px;
+	top: 65%;
+	left: 65%;
+}
+
+
+
+
+
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	margin:10px;
+	background: linear-gradient(135deg, #f300be, rgb(110, 110, 110));
+}
+
+footer a{
+	margin: 10px;
+	background: linear-gradient(135deg, #f300be, rgb(110 110 110 / 19%));
+	width: 6em;
+	width: fit-content;
+	padding: 3px 2px 3px 2px;
+	color: antiquewhite;
+}
+/*Galazy Z Fold: desktop-first*/
+@media  (max-width: 281px) {
+
+	.header{
+		display:flex;
+		flex-wrap: wrap;
+		width: 24em;
+		flex-direction: row;
+	}
+	.header .logo{
+		margin-left: 5px;
+		font-size: 12px;
+	}
+
+	.header .signIn button{
+		margin: 2px;
+		padding:2px;
+	}
+	.adress{
+		width: 24em;
+	}
+
+	.business{
+		width: 24em;
+	}
+
+	.gallery_wrapper{
+		width: 24em;
+	}
+
+	footer{
+		width: 24em;
+	}
+
+
+}
+
+@media  (max-width: 350px) {
+	
+	.header{
+		display:flex;
+		flex-wrap: wrap;
+		width: 26em;
+		flex-direction: row;
+	}
+	.header .logo{
+		margin-left: 5px;
+		font-size: 12px;
+	}
+
+	.header .signIn button{
+		margin: 2px;
+		padding:2px;
+	}
+	.adress{
+		width: 26em;
+	}
+
+	.business{
+		width: 26em;
+	}
+
+	.gallery_wrapper{
+		width: 26em;
+	}
+
+	footer{
+		width: 26em;
+	}
+
+
+}
+
