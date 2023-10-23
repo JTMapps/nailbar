@@ -48,7 +48,7 @@ function sendBooking(e) {
         var confirmAppointmentBtn = document.createElement("button");
         confirmAppointmentBtn.setAttribute('id',"confirmAppointmentBtn");
 
-        bookingNode.innerHTML= e;
+        bookingNode.innerText= e;
 
         bookingOrdered.appendChild(bookingNode);
         bookingNode.appendChild(confirmAppointmentBtn);
