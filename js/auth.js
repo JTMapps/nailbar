@@ -1,6 +1,6 @@
 	// Import the functions you need from the SDKs you need
-	var initializeApp  = require("https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js");
-	var getAnalytics = require ("https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js");
+	import{initializeApp} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+	import{getAnalytics} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
 	var getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut = require ("https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js");
 	
 	
