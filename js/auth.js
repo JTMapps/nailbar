@@ -92,8 +92,8 @@ const business = document.querySelector("#business");
 			onAuthStateChanged(auth, user => {
 				if(user) {
 					location.href="../nailbar/main.html";
-					signOutButton.style.display="none";
-					business.style.display= "none";
+					signOutButton.style.display="block";
+					business.style.display= "flex";
 
 				}
 
