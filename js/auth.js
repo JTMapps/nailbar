@@ -46,6 +46,8 @@ const userfirstName = document.querySelector("#userfirstName");
 const userlastName = document.querySelector("#userlastName");
 const userPhoneNumber = document.querySelector("#userPhoneNumber");
 
+const business = document.querySelector("#business");
+
 //secretContent.style.display = 'none';
 });
 
@@ -90,13 +92,19 @@ const userPhoneNumber = document.querySelector("#userPhoneNumber");
 			onAuthStateChanged(auth, user => {
 				if(user) {
 					location.href="../nailbar/main.html";
+					signOutButton.style.display="none";
+					business.style.display= "none";
+
 				}
 
 				else {
 
 					userfirstName.style.display= "block";
 					userLastName.style.display= "block";
-					userPhoneNumber.style.display= "block";	
+					userPhoneNumber.style.display= "block";
+					signOutButton.style.display="none";
+					business.style.display= "none";
+
 				}
 			})
 		}
