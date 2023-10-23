@@ -53,7 +53,7 @@ function sendBooking(e) {
         bookingOrdered.appendChild(bookingNode);
         bookingNode.appendChild(confirmAppointmentBtn);
 
-        confirmAppointmentBtn.addEventListener('click', confirmBooking(bookingNode));    
+        confirmAppointmentBtn.addEventListener('click', confirmBooking(e));    
     }
     else{
     }
@@ -72,17 +72,33 @@ function activeTask(task, color){
     }
 };
 
-function confirmBooking(e){
-    e.target.id
+function confirmBooking(e, activatedBookingCol){
+    e.classList.toggle('selected');
 
-    
-
-    
+    if(e.classList.contains('selected')){
+        active = true;
+        selectedColor = color;
+    }
+    else{
+        active = false;
+    }
 };
 
 //end of own code addition
 
 
+// Set colors for schedule (4)
+function setColors (e){
+    if(e.target.classList.contains('task') && active === true){
+        e.target.style.backgroundColor = selectedColor;
+        e.target.innerHTML = icon;
+    }else if(e.target.classList.contains('fas') && active === true){
+        e.target.parentElement.style.backgroundColor = selectedColor;
+        e.target.parentElement.innerHTML = icon;
+    }
+}; 
+
+/*
 
 function selectTask (e){
     
@@ -117,17 +133,6 @@ function selectTask (e){
             break
     }
 
-};
-
-// Set colors for schedule (4)
-function setColors (e){
-    if(e.target.classList.contains('task') && active === true){
-        e.target.style.backgroundColor = selectedColor;
-        e.target.innerHTML = icon;
-    }else if(e.target.classList.contains('fas') && active === true){
-        e.target.parentElement.style.backgroundColor = selectedColor;
-        e.target.parentElement.innerHTML = icon;
-    }
 };
 
 // Active task (1)
@@ -172,4 +177,4 @@ function openPopup(){
 // Close Pop-up
 function closePopup(){
     popUp.style.display = 'none';
-}
+} */
