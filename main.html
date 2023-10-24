@@ -12,7 +12,52 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<link href="auth.html">
 
-	<script src="../nailbar/js/main.js"></script>
+
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		import{initializeApp} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+		import{getAnalytics} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+		import{getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+
+
+		// TODO: Add SDKs for Firebase products that you want to use	   
+
+		import{ getDatabase, set, get, update, remove, ref, child}from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js"
+
+		// FIREBASE OBJECT CONFIGURATION;
+		document.addEventListener("DOMContentLoaded", event => { 
+
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+		apiKey: "AIzaSyA4xMNCyjxbhux_hBDe-nO9pF4uDsiipaI",
+		authDomain: "salon-be3a1.firebaseapp.com",
+		projectId: "salon-be3a1",
+		storageBucket: "salon-be3a1.appspot.com",
+		messagingSenderId: "425524125484",
+		appId: "1:425524125484:web:64dbba0782b46ec4d29689",
+		measurementId: "G-FHGB2XZM6D"
+		} //from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+
+
+		const app = initializeApp(firebaseConfig);
+		const auth = getAuth(app);
+
+
+
+		const db = getDatabase();
+
+		});
+
+	</script>
+
+	<!--jquery-->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+	<!--boostrap-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
 	
 </head>
 
@@ -24,12 +69,12 @@
 		
 		<div class="signIn">
 
-			<button class="signOutButton" id="signOutButton">sign out</button>
+			<button type="button" class="signOutButton" id="signOutButton">sign out</button>
 		
-			<button onclick=myFunction() class="signInBtn">sign in</button>
+			<button type="button" onclick=myFunction()  id="dropdownBtn" class="dropdownBtn">drop down</button>
 		
 			<div id="myDropdown" class="dropdown-content">
-                <a href="auth.html">LOGIN(signup)</a>
+                <a href="auth.html">login(signup)</a>
                 <a href="services.html">Service Menu</a>
             </div>
 		</div>
@@ -56,7 +101,7 @@
     </div>
 	
 	<div class="business" id="business">
-		<span class="makeABookingButton">
+		<span class="makeABookingButton"`>
 			<a href="bookingPage.html">Make A Booking</a>
 		</span>
 	</div>
@@ -82,8 +127,9 @@
         <a href="https://wa.link/0ylhz0">Whatsapp<i class='bx bxl-whatsapp-square'></i></a>
     </footer> 
 
-	<script src="../nailbar/js/bookingPage.js" defer></script>
 
+	<script src="../nailbar/js/main.js" defer></script>
+	<script src="../nailbar/js/bookingPage.js" defer></script>
 	<script src="../nailbar/js/auth.js" defer></script>
 	
 
