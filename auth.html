@@ -50,7 +50,7 @@
 		const userSignIn = async() => {
 		signInEmail = $("#userEmail").val();
 		signInPassword = $("#userPassword").val();
-		firebase.auth().signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+		signInWithEmailAndPassword(auth, signInEmail, signInPassword)
 		.then((userCredential) => {
 		const user = userCredential.user;
 		InsertData();
@@ -68,26 +68,25 @@
 		}
 
 		const checkAuthState = async() => {
-		onAuthStateChanged(auth, user => {
-		if(user) {
-			location.href="../nailbar/main.html";
-			$("#signOutButton").style.display="block";
-			$("#business").style.display= "flex";
+			onAuthStateChanged(auth, user => {
+			if(user) {
+				location.href="../nailbar/main.html";
+				$("#signOutButton").style.display="block";
+				$("#business").style.display= "flex";
 
-		}
+			}
 
-		else {
+			else {
 
-			userfirstName.style.display= "block";
-			userLastName.style.display= "block";
-			userPhoneNumber.style.display= "block";
-			$("#signOutButton").style.display="none";
-			$("#business").style.display= "none";
+				userfirstName.style.display= "block";
+				userLastName.style.display= "block";
+				userPhoneNumber.style.display= "block";
+				$("#signOutButton").style.display="none";
+				$("#business").style.display= "none";
 
-		}
-
-	})
-		}
+			}
+		})
+	}
 
 		checkAuthState();
 
