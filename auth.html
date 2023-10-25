@@ -9,6 +9,26 @@
 	<link rel="stylesheet" href="css/auth.css">
 
 	<script type="module" src="../nailbar/js/auth.js" defer>
+
+		import{getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+		import{ getDatabase, set, get, update, remove, ref, child}from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+		
+		const firebaseConfig = {
+		apiKey: "AIzaSyA4xMNCyjxbhux_hBDe-nO9pF4uDsiipaI",
+		authDomain: "salon-be3a1.firebaseapp.com",
+		projectId: "salon-be3a1",
+		storageBucket: "salon-be3a1.appspot.com",
+		messagingSenderId: "425524125484",
+		appId: "1:425524125484:web:64dbba0782b46ec4d29689",
+		measurementId: "G-FHGB2XZM6D"
+		} //from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+
+
+		const app = initializeApp(firebaseConfig);
+		const auth = getAuth(app);
+		const db = getDatabase();
+
+
 		const userSignUp = async() => {
 
 		let signUpEmail = $("#userEmail").val();
@@ -65,7 +85,8 @@
 			$("#business").style.display= "none";
 
 		}
-		})
+
+	})
 		}
 
 		checkAuthState();
@@ -90,6 +111,7 @@
 	</script>
 
 </head>
+
 <body>
     <div id="authForm" class="authForm">
 		
