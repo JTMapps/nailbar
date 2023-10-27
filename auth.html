@@ -93,19 +93,19 @@
 		signUpButton.addEventListener('click', userSignUp);
 		signInButton.addEventListener('click', userSignIn);
 		signOutButton.addEventListener('click', userSignOut);
-
+																																																											
 		function InsertData(){
-		set(ref(db, "People/" + firebase.auth().currentUser.uid + "person/", {
-		name: userfirstName.value,
-		email: userEmail.value,
-		phoneNumber: userPhoneNumber.value,
-		})
-		.then(()=>{
-		alert("Data Added Successfully");
-		})
-		.catch((errpr)=>{
-		alert(error);
-		})
+			set(ref(db, "People/" + firebase.auth().currentUser.uid + "person/", {
+			name: userfirstName.value,
+			email: userEmail.value,
+			phoneNumber: userPhoneNumber.value,
+			})
+			.then(()=>{
+			alert("Data Added Successfully");
+			})
+			.catch((errpr)=>{
+			alert(error);
+			})
 		)};
 	</script>
 
@@ -158,6 +158,5 @@
 				</div>
 			</form>
 		</div>
-
 </body>  
 </html> 
