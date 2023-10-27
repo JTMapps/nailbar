@@ -32,18 +32,18 @@
 		const checkAuthState = async() => {
 			onAuthStateChanged(auth, user => {
 			if(user) {
-				$("userfirstName").hide();
-				$("userlastName").hide();
-				$("userPhoneNumber").hide();
+				$("#userfirstName").hide();
+				$("#userlastName").hide();
+				$("#userPhoneNumber").hide();
 				alert("you are already signed in");
 				location.href("main.html");
 
 			}
 
 			else {
-				$("userfirstName").show(); ;
-				$("userlastName").show(); ;
-				$("userPhoneNumber").show(); ;
+				$("#userfirstName").show(); ;
+				$("#userlastName").show(); ;
+				$("#userPhoneNumber").show(); ;
 			}
 		})
 		}
