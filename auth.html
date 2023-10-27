@@ -9,7 +9,7 @@
 	
 	<link rel="stylesheet" href="css/auth.css">
 
-	<script type="module" src="../nailbar/js/auth.js" defer>
+	<script type="module">
 		
 		import{initializeApp} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
 		import{getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
@@ -37,7 +37,6 @@
 				$("#userPhoneNumber").hide();
 				alert("you are already signed in");
 				location.href("main.html");
-
 			}
 
 			else {
@@ -68,8 +67,8 @@
 		}
 
 		const userSignIn = async() => {
-		signInEmail = $("#userEmail").val();
-		signInPassword = $("#userPassword").val();
+		let signInEmail = $("#userEmail").val();
+		let signInPassword = $("#userPassword").val();
 		signInWithEmailAndPassword(auth, signInEmail, signInPassword)
 		.then((userCredential) => {
 		const user = userCredential.user;
