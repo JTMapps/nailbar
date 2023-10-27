@@ -9,31 +9,47 @@
 	<link rel="stylesheet" href="css/auth.css">
 
 	<script type="module" src="../nailbar/js/auth.js" defer>
-
+		
+		import{initializeApp} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
 		import{getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
 		import{ getDatabase, set, get, update, remove, ref, child}from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 		
 		const firebaseConfig = {
-		apiKey: "AIzaSyA4xMNCyjxbhux_hBDe-nO9pF4uDsiipaI",
-		authDomain: "salon-be3a1.firebaseapp.com",
-		projectId: "salon-be3a1",
-		storageBucket: "salon-be3a1.appspot.com",
-		messagingSenderId: "425524125484",
-		appId: "1:425524125484:web:64dbba0782b46ec4d29689",
-		measurementId: "G-FHGB2XZM6D"
-		} //from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+			apiKey: "AIzaSyAi7vWrdz6NCnFlnuY3KT77lB3Xw8Lg1Hc",
+			authDomain: "nailbar-bc5e8.firebaseapp.com",
+			projectId: "nailbar-bc5e8",
+			storageBucket: "nailbar-bc5e8.appspot.com",
+			messagingSenderId: "672707669091",
+			appId: "1:672707669091:web:c770672694748a01f75c56"
+		}; //"https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
 
 
 		const app = initializeApp(firebaseConfig);
 		const auth = getAuth(app);
 		const db = getDatabase();
 
+		const checkAuthState = async() => {
+			onAuthStateChanged(auth, user => {
+			if(user) {
+				location.href("main.html")
 
+			}
+
+			else {
+				$("#signOutButton").style.display="none";
+				$("#business").style.display= "none";
+
+			}
+		})
+		}
+
+		checkAuthState();
+		
 		const userSignUp = async() => {
 
 		let signUpEmail = $("#userEmail").val();
 		let signUpPassword = $("#userPassword").val();
-		firebase.auth().createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+		createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
 		.then((userCredential) => {
 		const user = userCredential.user;
 		console.log(user);
@@ -61,52 +77,11 @@
 		const errorMessage = error.message;
 		console.log(errorCode + errorMessage)
 		})
-		}
-
-		const userSignOut = async() => {
-		await signOut(auth);
-		}
-
-		const checkAuthState = async() => {
-			onAuthStateChanged(auth, user => {
-			if(user) {
-				location.href="../nailbar/main.html";
-				$("#signOutButton").style.display="block";
-				$("#business").style.display= "flex";
-
-			}
-
-			else {
-
-				userfirstName.style.display= "block";
-				userLastName.style.display= "block";
-				userPhoneNumber.style.display= "block";
-				$("#signOutButton").style.display="none";
-				$("#business").style.display= "none";
-
-			}
-		})
-	}
-
-		checkAuthState();
+		};
 
 		signUpButton.addEventListener('click', userSignUp);
 		signInButton.addEventListener('click', userSignIn);
-		signOutButton.addEventListener('click', userSignOut);
-																																																											
-		function InsertData(){
-			set(ref(db, "People/" + firebase.auth().currentUser.uid + "person/", {
-			name: userfirstName.value,
-			email: userEmail.value,
-			phoneNumber: userPhoneNumber.value,
-			})
-			.then(()=>{
-			alert("Data Added Successfully");
-			})
-			.catch((errpr)=>{
-			alert(error);
-			})
-		)};
+
 	</script>
 
 </head>
