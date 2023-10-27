@@ -32,17 +32,18 @@
 		const checkAuthState = async() => {
 			onAuthStateChanged(auth, user => {
 			if(user) {
-				$("#userfirstName").hide();
+				
+				/*$("#userfirstName").hide();
 				$("#userlastName").hide();
-				$("#userPhoneNumber").hide();
+				$("#userPhoneNumber").hide();*/
 				alert("you are already signed in");
 				location.href("main.html");
 			}
 
 			else {
-				$("#userfirstName").show(); ;
-				$("#userlastName").show(); ;
-				$("#userPhoneNumber").show(); ;
+				/*$("#userfirstName").show(); 
+				$("#userlastName").show(); 
+				$("#userPhoneNumber").show();*/
 			}
 		})
 		}
@@ -72,6 +73,7 @@
 		signInWithEmailAndPassword(auth, signInEmail, signInPassword)
 		.then((userCredential) => {
 		const user = userCredential.user;
+		console.log("New User: "+ user + signInEmail + signInPassword);
 		alert("You have signed in successfully!");
 		})
 		.catch((error) => {
@@ -105,7 +107,7 @@
 					<i class='bx bxs-lock-alt'></i>
 				</div>
 
-			
+			<!--
 				<span class="signUpContent" id="signUpContent">	
 					<div class="input-box">
 						<label class="userfirstNameLabel" for="userfirstName">First Name</label>
@@ -125,6 +127,7 @@
 						<i class='bx bxs-lock-alt'></i>
 					</div>
 				</span>
+			-->	
 
 				<div class="signInButton">
 					<button type="submit" id="signInButton">Login</button>
