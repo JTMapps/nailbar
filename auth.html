@@ -10,9 +10,9 @@
 
 	<script type="module" src="../nailbar/js/auth.js" defer>
 		
-		import{initializeApp} from "firebase/app";
-		import{getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "firebase/auth";
-		import{ getDatabase, set, get, update, remove, ref, child}from "firebase/database";
+		import{initializeApp} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+		import{getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+		import{ getDatabase, set, get, update, remove, ref, child}from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 		
 		const firebaseConfig = {
 			apiKey: "AIzaSyAi7vWrdz6NCnFlnuY3KT77lB3Xw8Lg1Hc",
@@ -86,9 +86,6 @@
 		$("#signInButton").click(userSignIn);
 
 	</script>
-
-	<!--jquery-->
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 </head>
 
