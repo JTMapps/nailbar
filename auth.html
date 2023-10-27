@@ -31,20 +31,24 @@
 		const checkAuthState = async() => {
 			onAuthStateChanged(auth, user => {
 			if(user) {
-				location.href("main.html")
+				$("userfirstName").style.display= "none" ;
+				$("userlastName").style.display= "none" ;
+				$("userPhoneNumber").style.display= "none" ;
+				alert("you are already signed in");
+				location.href("main.html");
 
 			}
 
 			else {
-				$("#signOutButton").style.display="none";
-				$("#business").style.display= "none";
-
+				$("userfirstName").style.display= "block" ;
+				$("userlastName").style.display= "block" ;
+				$("userPhoneNumber").style.display= "block" ;
 			}
 		})
 		}
 
 		checkAuthState();
-		
+
 		const userSignUp = async() => {
 
 		let signUpEmail = $("#userEmail").val();
@@ -53,7 +57,6 @@
 		.then((userCredential) => {
 		const user = userCredential.user;
 		console.log(user);
-		InsertData();
 		alert("Your account has been created!");
 		})
 		.catch((error) => {
@@ -79,8 +82,8 @@
 		})
 		};
 
-		signUpButton.addEventListener('click', userSignUp);
-		signInButton.addEventListener('click', userSignIn);
+		$("#signUpButton").click(userSignUp);
+		$("#signInButton").click(userSignIn);
 
 	</script>
 
