@@ -122,8 +122,7 @@
 }
 
 .business{
-	display: flex;
-	/* margin: 10px; */
+	/*display: flex;*/
 	flex: auto;
 	justify-content: center;
 	/* align-items: center; */
@@ -141,7 +140,7 @@
 	flex-wrap: wrap;
 	background-color: deeppink;
 	background-image: url(../img/logo.jpg);
-	background-size: cover;
+	background-size: auto;
 	background-repeat: no-repeat;
 	height: 300px;
 	width: 90%;
