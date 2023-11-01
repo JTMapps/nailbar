@@ -51,40 +51,26 @@
 		checkAuthState();
 
 		const userSignUp = async() => {
-
-		let signUpEmail = $("#userEmail").val();
-		let signUpPassword = $("#userPassword").val();
-		createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
-		.then((userCredential) => { 
-		const user = userCredential.user;
-		console.log(user);
-		alert("Your account has been created!");
-		})
-		.catch((error) => {
-		const errorCode = error.code;
-		const errorMessage = error.message;
-		console.log(errorCode + errorMessage)
-		})
+        
+            let signUpPassword = $("#userPassword").val();            
+            let signUpPassword = $("#userPassword").val();
+            let signUpPassword = $("#userPassword").val();
+		    let signUpEmail = $("#userEmail").val();
+		    let signUpPassword = $("#userPassword").val();
+		    createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+		    .then((userCredential) => { 
+		    const user = userCredential.user;
+		    console.log(user);
+		    alert("Your account has been created!");
+		    })
+            .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode + errorMessage)
+            })
 		}
 
-		const userSignIn = async() => {
-		let signInEmail = $("#userEmail").val();
-		let signInPassword = $("#userPassword").val();
-		signInWithEmailAndPassword(auth, signInEmail, signInPassword)
-		.then((userCredential) => {
-		const user = userCredential.user;
-		console.log("New User: "+ user + signInEmail + signInPassword);
-		alert("You have signed in successfully!");
-		})
-		.catch((error) => {
-		const errorCode = error.code;
-		const errorMessage = error.message;
-		console.log(errorCode + errorMessage)
-		})
-		};
-
 		$("#signUpButton").click(userSignUp);
-		$("#signInButton").click(userSignIn);
 
 	</script>
 
