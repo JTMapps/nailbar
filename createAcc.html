@@ -9,6 +9,85 @@
 
     <title>Create your Nailbar Account</title>
 
+    <script type="module">
+		
+		import{initializeApp} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+		import{getAuth, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+		import{ getDatabase, set, get, update, remove, ref, child}from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+		
+		const firebaseConfig = {
+			apiKey: "AIzaSyAi7vWrdz6NCnFlnuY3KT77lB3Xw8Lg1Hc",
+			authDomain: "nailbar-bc5e8.firebaseapp.com",
+			projectId: "nailbar-bc5e8",
+			storageBucket: "nailbar-bc5e8.appspot.com",
+			messagingSenderId: "672707669091",
+			appId: "1:672707669091:web:c770672694748a01f75c56"
+		}; //"https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+
+
+		const app = initializeApp(firebaseConfig);
+		const auth = getAuth(app);
+		const db = getDatabase();
+
+		const checkAuthState = async() => {
+			onAuthStateChanged(auth, user => {
+			if(user) {
+				
+				/*$("#userfirstName").hide();
+				$("#userlastName").hide();
+				$("#userPhoneNumber").hide();*/
+				alert("you are now signed in already signed in");
+				location.href("main.html");
+			}
+
+			else {
+				/*$("#userfirstName").show(); 
+				$("#userlastName").show(); 
+				$("#userPhoneNumber").show();*/
+			}
+		})
+		}
+
+		checkAuthState();
+
+		const userSignUp = async() => {
+
+		let signUpEmail = $("#userEmail").val();
+		let signUpPassword = $("#userPassword").val();
+		createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+		.then((userCredential) => { 
+		const user = userCredential.user;
+		console.log(user);
+		alert("Your account has been created!");
+		})
+		.catch((error) => {
+		const errorCode = error.code;
+		const errorMessage = error.message;
+		console.log(errorCode + errorMessage)
+		})
+		}
+
+		const userSignIn = async() => {
+		let signInEmail = $("#userEmail").val();
+		let signInPassword = $("#userPassword").val();
+		signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+		.then((userCredential) => {
+		const user = userCredential.user;
+		console.log("New User: "+ user + signInEmail + signInPassword);
+		alert("You have signed in successfully!");
+		})
+		.catch((error) => {
+		const errorCode = error.code;
+		const errorMessage = error.message;
+		console.log(errorCode + errorMessage)
+		})
+		};
+
+		$("#signUpButton").click(userSignUp);
+		$("#signInButton").click(userSignIn);
+
+	</script>
+
 </head>
 
 <body>
@@ -40,7 +119,7 @@
             </div>
 
             <button type="button" id="createUserButton" >Create Account</button>
-
+            <!--<button type="submit" id="signUpButton"> Sign Up</button>-->
         </form>
     </div>
 
