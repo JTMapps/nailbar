@@ -55,7 +55,7 @@
 		let signUpEmail = $("#userEmail").val();
 		let signUpPassword = $("#userPassword").val();
 		createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
-		.then((userCredential) => {
+		.then((userCredential) => { 
 		const user = userCredential.user;
 		console.log(user);
 		alert("Your account has been created!");
