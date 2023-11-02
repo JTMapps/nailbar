@@ -2,6 +2,7 @@ import{initializeApp} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-a
 import{getAuth, signInWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
 import{ getDatabase, set, get, update, remove, ref, child}from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyAi7vWrdz6NCnFlnuY3KT77lB3Xw8Lg1Hc",
     authDomain: "nailbar-bc5e8.firebaseapp.com",
