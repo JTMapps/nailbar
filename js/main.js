@@ -1,8 +1,4 @@
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
- 
-  // Close the drop opdown menu if the user clicks outside of it
+// Close the drop opdown menu if the user clicks outside of it
 $("dropdownBtn").click(function(event) {
   if (!event.target.matches('.dropdownBtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
