@@ -5,7 +5,7 @@ function myFunction() {
   // Close the drop opdown menu if the user clicks outside of it
 $("dropdownBtn").click(function(event) {
   if (!event.target.matches('.dropdownBtn')) {
-    var dropdowns = document.querySelectorAll("dropdown-content");
+    var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
