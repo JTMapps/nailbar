@@ -5,88 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 
-    <title>Authentication is Fun</title>
+    <title>Client Login Page</title>
 	
 	<link rel="stylesheet" href="css/auth.css">
-
+	<!--
 	<script type="module">
 		
-		import{initializeApp} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
-		import{getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
-		import{ getDatabase, set, get, update, remove, ref, child}from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 		
-		const firebaseConfig = {
-			apiKey: "AIzaSyAi7vWrdz6NCnFlnuY3KT77lB3Xw8Lg1Hc",
-			authDomain: "nailbar-bc5e8.firebaseapp.com",
-			projectId: "nailbar-bc5e8",
-			storageBucket: "nailbar-bc5e8.appspot.com",
-			messagingSenderId: "672707669091",
-			appId: "1:672707669091:web:c770672694748a01f75c56"
-		}; //"https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
 
-
-		const app = initializeApp(firebaseConfig);
-		const auth = getAuth(app);
-		const db = getDatabase();
-
-		const checkAuthState = async() => {
-			onAuthStateChanged(auth, user => {
-			if(user) {
-				
-				/*$("#userfirstName").hide();
-				$("#userlastName").hide();
-				$("#userPhoneNumber").hide();*/
-				alert("you are already signed in");
-				location.href("main.html");
-			}
-
-			else {
-				/*$("#userfirstName").show(); 
-				$("#userlastName").show(); 
-				$("#userPhoneNumber").show();*/
-			}
-		})
-		}
-
-		checkAuthState();
-
-		const userSignUp = async() => {
-
-		let signUpEmail = $("#userEmail").val();
-		let signUpPassword = $("#userPassword").val();
-		createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
-		.then((userCredential) => { 
-		const user = userCredential.user;
-		console.log(user);
-		alert("Your account has been created!");
-		})
-		.catch((error) => {
-		const errorCode = error.code;
-		const errorMessage = error.message;
-		console.log(errorCode + errorMessage)
-		})
-		}
-
-		const userSignIn = async() => {
-		let signInEmail = $("#userEmail").val();
-		let signInPassword = $("#userPassword").val();
-		signInWithEmailAndPassword(auth, signInEmail, signInPassword)
-		.then((userCredential) => {
-		const user = userCredential.user;
-		console.log("New User: "+ user + signInEmail + signInPassword);
-		alert("You have signed in successfully!");
-		})
-		.catch((error) => {
-		const errorCode = error.code;
-		const errorMessage = error.message;
-		console.log(errorCode + errorMessage)
-		})
-		};
-
-		$("#signUpButton").click(userSignUp);
-		$("#signInButton").click(userSignIn);
-
-	</script>
+	</script> -->
 
 </head>
 
@@ -96,7 +23,7 @@
 		<div class="title">Login</div>
 			<form id="authForm" class="login-details " action="#">
 				<div class="input-box">
-					<label class="emailInputLabel" for="userEmail">Email</label>
+		 			<label class="emailInputLabel" for="userEmail">Email</label>
 					<input id="userEmail" type="email" placeholder="e-Mail" required />
 					<i class='bx bx-user'></i>
 				</div>
@@ -107,42 +34,14 @@
 					<i class='bx bxs-lock-alt'></i>
 				</div>
 
-			<!--
-				<span class="signUpContent" id="signUpContent">	
-					<div class="input-box">
-						<label class="userfirstNameLabel" for="userfirstName">First Name</label>
-						<input id="userfirstName" placeholder="First Name"/>
-						<i class='bx bxs-lock-alt'></i>
-					</div>
-
-					<div class="input-box">
-						<label class="userlastNameLabel" for="userlastName">Last Name</label>
-						<input id="userlastName" placeholder="Last Name"/>
-						<i class='bx bxs-lock-alt'></i>
-					</div>
-
-					<div class="input-box">
-						<label class="userPhoneNumberLabel" for="userPhoneNumber">Phone Number</label>
-						<input id="userPhoneNumber" placeholder="Phone Number"/>
-						<i class='bx bxs-lock-alt'></i>
-					</div>
-				</span>
-			-->	
-
 				<div class="signInButton">
 					<button type="submit" id="signInButton">Login</button>
 				</div>
-
-				<button type="button" id="createAccountButton" >Create New Account</button>
 				
 				<div class="register-link">
-					<p>don't have an account?<button type="submit" id="signUpButton"> Sign Up</button></p>
+					<p>don't have an account?<a href="createAcc.html" >Create New Account</a></p>
 				</div>
 			</form>
-
-			<script type="module">
-				
-			</script>
 		</div>
 </body>  
 </html> 
